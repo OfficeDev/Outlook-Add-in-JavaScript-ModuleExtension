@@ -47,7 +47,8 @@ To use the billable hours sample in Outlook, the following are required.
 * [Git Bash](http://www.git-scm.com/downloads) to run command line utilities
 * Clone this repo to your local computer
 
-> Note: Module extensions are only supported on Outlook 2016 for Windows. 
+> Note: Module extensions are only supported on Outlook 2016 for Windows. The are not yet supported on
+> other platforms.
 
 ## How to install certificates
 
@@ -97,11 +98,11 @@ main UI will change to reflect the new rate.
 <dd>As of the publication of this sample, module extensions work
 only in Outlook 2016 for Windows.</dd>
 <dt>Why doesn't my module show up?</dt>
-<dd>There are a couple of reasons. Most common while I was developing the sample was simply forgetting
-to start the NodeJS server. Sometimes after removing and adding the module manifest file I needed to restart
-Outlook to see the changes. If you see an empty UI with the message "Nothing to load" try a restart.</dd>
+<dd>There are a couple of reasons. Most common while developing the sample was simply forgetting
+to start the NodeJS server. Sometimes after removing and adding the module manifest file you need to restart
+Outlook to see the changes. If you see an empty UI with the message "Nothing to load," try a restart.</dd>
 <dt>Why does the npm install command hang?</dt>
-<dd>It probably isn't hung, it just takes a while on Windows.
+<dd>It probably isn't hung, it just takes a while on Windows. You'll see the command prompt when the installation is complete.
 </dl>
 
 ## Questions and comments
