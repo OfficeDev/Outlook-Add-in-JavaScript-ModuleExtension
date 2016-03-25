@@ -1,0 +1,8 @@
+# Ignore certificate files.
+*.key
+*.crt
+*.csr
+
+# Ignore directories installed by scripts.
+node_modules/
+typings/
