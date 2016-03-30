@@ -60,7 +60,7 @@
       <!-- End override of existing elements -->
 
       <Hosts>
-        <Host xsi:type="Mailhost">
+        <Host xsi:type="MailHost">
           <DesktopFormFactor>
             <!-- Set the URL of the file that contains the
                  JavaScript function that controls the extension -->
