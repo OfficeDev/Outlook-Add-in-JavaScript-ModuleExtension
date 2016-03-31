@@ -13,7 +13,7 @@
 
 ## Summary
 
-This Outlook 2016 for Windows add-in sample uses the new module extension point <ExtensionPoint xsi:type="Module">) for Outlook. This code sample integrates a billable hours add-in with the Outlook built-in Mail, Calendar, and 
+This Outlook 2016 for Windows add-in sample uses the new module extension point \<ExtensionPoint xsi:type="Module"\> for Outlook. This code sample integrates a billable hours add-in with the Outlook built-in Mail, Calendar, and 
 Tasks, etc. modules. 
 
 ![](/readme-images/Outlook-Navigation-Bar.png)
