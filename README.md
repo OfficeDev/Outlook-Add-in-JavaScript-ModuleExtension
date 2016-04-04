@@ -3,13 +3,10 @@ This Outlook 2016 for Windows add-in sample uses the new module extenstion point
 
 ## Table of Contents
 * [Change History](#change-history)
-* [Device requirements](#device-requirements)
 * [Prerequisites](#prerequisites)
-* [Azure client application registration](#azure-client-application-registration)
 * [Configure the project](#configure-the-project)
 * [Run the project](#run-the-project)
 * [Understand the code](#understand-the-code)
-* [Connect to Office 365](#connect-to-office-365)
 * [Questions and comments](#questions-and-comments)
 * [Additional resources](#additional-resources)
 
