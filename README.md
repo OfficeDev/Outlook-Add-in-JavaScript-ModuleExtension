@@ -71,12 +71,11 @@ The new module extension is enabled in your manifest file by setting the extensi
 
 
 ## Questions and comments
-We'd love to get your feedback on the Outlook-Add-in-JavaScript-ModuleExtension sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension/issues) section of this repository. //br//
+We'd love to get your feedback on the Outlook-Add-in-JavaScript-ModuleExtension sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension/issues) section of this repository.
+
 Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
 
 ## Additional resources
-//*Provide links to other samples or relevant documentation. Some common ones listed below.*//
-
 * [Module extension Outlook add-ins](http://dev.office.com/docs/add-ins/outlook/extension-module-outlook-add-ins)
 * [Office Add-ins platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx)
 * [Office 365 APIs documentation](http://msdn.microsoft.com/office/office365/howto/platform-development-overview)
