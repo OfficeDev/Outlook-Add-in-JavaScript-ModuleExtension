@@ -1,4 +1,4 @@
-# Title
+# Outlook module extension billable hours sample.
 This Outlook 2016 for Windows add-in sample uses the new module extenstion point \<ExtensionPoint xsi:type="Module"> for Outlook. This code sample integrates a billable hours add-in with the built-in Outlook Mail, Calend, Tasks, etc. modules.
 
 ## Table of Contents
@@ -33,6 +33,7 @@ You'll need to install a certificate to run this sample because add-in commands 
 2. Double-click ```ca.crt``` and install it in your Trusted Root Certification Authorities store
 
 Start a local HTTPS web server to serve the files for the module extension:
+
 1. Install the package dependencies identified in packages.json by running ```npm install``` in the project root directory
 2. Start the local server by running ```node server.js```
 
