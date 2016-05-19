@@ -1,4 +1,4 @@
-# Outlook module extension billable hours sample.
+# Outlook module extension billable hours sample
 This Outlook 2016 for Windows add-in sample uses the new module extenstion point \<ExtensionPoint xsi:type="Module"> for Outlook. This code sample integrates a billable hours add-in with the built-in Outlook Mail, Calend, Tasks, etc. modules.
 
 ## Table of Contents
