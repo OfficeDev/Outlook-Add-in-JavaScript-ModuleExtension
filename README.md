@@ -1,105 +1,118 @@
----
-page_type: sample
-products:
-- office-outlook
-- office-365
-languages:
-- javascript
-extensions:
-  contentType: samples
-  technologies:
-  - Add-ins
-  createdDate: 3/23/2016 3:48:52 PM
----
-# Outlook module extension billable hours sample
-This Outlook 2016 for Windows add-in sample uses the new module extenstion point \<ExtensionPoint xsi:type="Module"> for Outlook. This code sample integrates a billable hours add-in with the built-in Outlook Mail, Calend, Tasks, etc. modules.
+# [ARCHIVED] Compute billable hours with a module extension add-in in Outlook
 
-## Table of Contents
-* [Change History](#change-history)
-* [Prerequisites](#prerequisites)
-* [Configure the project](#configure-the-project)
-* [Run the project](#run-the-project)
-* [Understand the code](#understand-the-code)
-* [Questions and comments](#questions-and-comments)
-* [Additional resources](#additional-resources)
+**Note:** This sample is archived and no longer actively maintained. Security vulnerabilities may exist in the project, or its dependencies. If you plan to reuse or run any code from this repo, be sure to perform appropriate security checks on the code or dependencies first. Don't use this project as the starting point of a production Office Add-in. Always start your production code by using the Office/SharePoint development workload in Visual Studio, or the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), and follow security best practices as you develop the add-in.
 
-## Change History
-March 31, 2016:
-* Published the first version of the sample
+## Summary
 
-April 4, 2016:
-* Updated the README file
+This sample configures the [Module extension point](https://learn.microsoft.com/javascript/api/manifest/extensionpoint#module) in an Outlook add-in to compute billable hours for meetings, emails, and tasks.
+
+For documentation related to this sample, see [Module extension Outlook add-ins](https://learn.microsoft.com/office/dev/add-ins/outlook/extension-module-outlook-add-ins).
+
+## Applies to
+
+Outlook 2016 on Windows or later.
 
 ## Prerequisites
 
-* Outlook 2016 for Windows
-* [NodeJS](https://nodejs.org/en) to serve the module extension
-* [npm](https://www.npmjs.com/) to install dependencies. It comes with NodeJS
-* [GitBash](http://www.git-scm.com/downloads) to run command line utilities
-* Clone this repo to your local computer.
+Outlook 2016 on Windows or later.
 
-## Configure the project
+## Solution
 
-You'll need to install a certificate to run this sample because add-in commands require HTTPS. Because add-in commands to not have a UI, you are not prompted to accept an invalid certificate.
+| Solution | Authors |
+| -------- | --------- |
+| Compute billable hours with a module extension add-in in Outlook. | Microsoft |
 
-1. Run ```./gen-cert.sh``` to create a certificate.
-2. Double-click ```ca.crt``` and install it in your Trusted Root Certification Authorities store
+## Version history
 
-Start a local HTTPS web server to serve the files for the module extension:
+| Version | Date | Comments |
+| ------- | ----- | -------- |
+| 1.0 | 03-31-2016 | Initial release |
+| 1.1 | 04-04-2016 | Updated the README file |
+| 1.2 | 01-11-2024 | Transferred and archived sample |
 
-1. Install the package dependencies identified in packages.json by running ```npm install``` in the project root directory
-2. Start the local server by running ```node server.js```
+## Run the sample
 
-## Run the project
+Run this sample in Outlook on Windows using one of the following add-in file hosting options.
 
-1. Start Outlook
-2. Choose the File tab, and then choose Manage Add-ins
-3. After the Add-in Manager opens, choose the "+" symbol, and then choose Add from a file
-4. Choose Browse and then navigate to the directory that contains the sample
-5. Select the module manifest (outlook-add-in-javascript-moduleextension.xml) and then click Open
-6. Choose Next and then choose Install to install the module
-7. Close the Module Manager
+### Run the sample from GitHub
 
-It may take Outlook a few moments to load the new module, but when it does you'll see your new module added to the navigation bar shortcuts. Using compact navigation, the shortcuts look like this:
+The add-in's web files are served from this repository on GitHub.
 
-![Shows add-in commands in the compact Outlook navigation bar.](/readme-images/Outlook-Compact-Navigation-Bar.png)
+1. Download the **manifest.xml** file from this sample to a folder on your computer.
+1. Sideload the add-in manifest in Outlook on Windows by following the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing?tabs=windows#sideload-manually).
+1. Follow the steps in [Try it out](#try-it-out) to test the sample.
 
-If you're not using compact navigation, the shortcuts will look like this:
+### Run the sample from localhost
 
-![Shows a single module extension the the expanded navigation bar.](/readme-images/Outlook-Navigation-Bar.png)
+If you prefer to configure a web server and host the add-in's web files from your computer, use the following steps.
 
-Click either **Billable hours** or the module icon to open the module extension. Outlook will change
-to show the module UI.
+1. Install a recent version of [npm](https://www.npmjs.com/get-npm) and [Node.js](https://nodejs.org/) on your computer. To verify if you've already installed these tools, run the commands `node -v` and `npm -v` in your terminal.
+1. You need http-server to run the local web server. If you haven't installed this yet, you can do this with the following command.
 
-![Shows the user interface for the module extenstion.](/readme-images/Outlook-Billable-Hours-UI.png)
+    ```console
+    npm install --global http-server
+    ```
 
-There are three buttons on the ribbon. Click one to change the billing rate, and the totals in the 
-main UI will change to reflect the new rate. 
+1. You need Office-Addin-dev-certs to generate self-signed certificates to run the local web server. If you haven't installed this yet, you can do this with the following command.
 
-## Understand the code
+    ```console
+    npm install --global office-addin-dev-certs
+    ```
 
-The new module extension is enabled in your manifest file by setting the extension type to ```"Module"```. This is the [section of the manifest](https://github.com/chbighammsft/Outlook-Add-in-JavaScript-ModuleExtension-1/blob/98443386d33191e620631efac4f4f4045cb3b75a/outlook-add-in-javascript-moduleextension.xml#L70) that you need to change:
+1. Clone or download this sample to a folder on your computer, then go to that folder in a console or terminal window.
+1. Run the following command to generate a self-signed certificate to use for the web server.
 
-    <!--New Extension Point - Module for a ModuleApp -->
-        <ExtensionPoint xsi:type="Module">
+   ```console
+    npx office-addin-dev-certs install
+    ```
 
+    This command will display the folder location where it generated the certificate files.
+1. Go to the folder location where the certificate files were generated, then copy the **localhost.crt** and **localhost.key** files to the cloned or downloaded sample folder.
+1. Run the following command.
 
-## Questions and comments
-We'd love to get your feedback on the Outlook-Add-in-JavaScript-ModuleExtension sample. You can send your feedback to us in the [Issues](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension/issues) section of this repository.
+    ```console
+    http-server -S -C localhost.crt -K localhost.key --cors . -p 3000
+    ```
 
-Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions are tagged with [Office365] and [API].
+    The http-server will run and host the current folder's files on localhost:3000.
+1. Now that your localhost web server is running, you can sideload the **manifest-localhost.xml** file provided in the sample folder. To sideload the manifest, follow the manual instructions in [Sideload Outlook add-ins for testing](https://learn.microsoft.com/office/dev/add-ins/outlook/sideload-outlook-add-ins-for-testing?tabs=windows#sideload-manually).
+1. Follow the steps in [Try it out](#try-it-out) to test the sample.
 
-## Additional resources
-* [Module extension Outlook add-ins](http://dev.office.com/docs/add-ins/outlook/extension-module-outlook-add-ins)
-* [Office Add-ins platform overview](https://msdn.microsoft.com/EN-US/library/office/jj220082.aspx)
-* [Office 365 APIs documentation](http://msdn.microsoft.com/office/office365/howto/platform-development-overview)
-* [Microsoft Office 365 API Tools](https://visualstudiogallery.msdn.microsoft.com/a15b85e6-69a7-4fdf-adda-a38066bb5155)
-* [Office Dev Center](http://dev.office.com/)
-* [Office 365 APIs starter projects and code samples](http://msdn.microsoft.com/en-us/office/office365/howto/starter-projects-and-code-samples)
+## Try it out
+
+Once the add-in is loaded, perform the following steps to try it out.
+
+1. From the Outlook navigation bar, select the **Billable Hours** add-in.
+
+   The appearance of the modules on the navigation bar differ depending on whether you have a compacted or extended navigation bar.
+
+   ![Modules in the compact Outlook navigation bar.](readme-images/outlook-compact-navigation-bar.png)
+
+   ![Modules in the expanded Outlook navigation bar.](readme-images/outlook-navigation-bar.png)
+
+   > **Note**: In the latest versions of Outlook on Windows, the navigation bar containing the modules appears on the left side of the client (see [New location for the Mail, Calendar, People, and other modules](https://techcommunity.microsoft.com/t5/outlook-global-customer-service/new-location-for-the-mail-calendar-people-and-other-modules/ba-p/3596278)). To access the **Billable Hours** add-in, select **More Apps** > **Billable Hours** from the navigation bar.
+   >
+   > ![The updated navigation bar in newer versions of Outlook on Windows.](readme-images/outlook-updated-navigation-bar.png)
+1. The user interface of the add-in is displayed with sample data for testing. To update the computed amounts, from the ribbon, select **Associate Rate**, **Partner Rate**, or **Executive Rate**.
+
+![The user interface of the module extension add-in.](readme-images/outlook-billable-hours-ui.png)
+
+## Key parts of the sample
+
+To integrate the add-in into the Outlook client's navigation bar, you must set the `xsi:type` of the **\<ExtensionPoint>** element to `Module`.
+
+```xml
+<ExtensionPoint xsi:type="Module">
+  ...
+</ExtensionPoint>
+```
+
+## Questions and feedback
+
+For general questions about developing Office Add-ins, go to [Microsoft Q&A](https://learn.microsoft.com/answers/topics/office-js-dev.html) using the office-js-dev tag.
 
 ## Copyright
-Copyright (c) 2016 Microsoft. All rights reserved.
 
-
+Copyright (c) 2024 Microsoft. All rights reserved.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

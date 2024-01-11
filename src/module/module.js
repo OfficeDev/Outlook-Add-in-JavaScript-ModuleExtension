@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
  */
@@ -58,7 +58,7 @@ function setBillingRates(rate) {
 // Constructs the meetings table and calculated the total
 // billing amount for each item and for all meetings.
 function setMeetingsRate(rate) {
-    return $.getJSON("SampleMeetingData.json", function (data) {
+    return $.getJSON("../../assets/sampleMeetingData.json", function (data) {
         var jsonData = data.Appointments;
 
         var dataTable = $("#app-Meetings-table");
@@ -100,7 +100,7 @@ function setMeetingsRate(rate) {
 // Constructs the email table and calculated the total
 // billing amount for each item and for all email.
 function setEmailRate(rate) {
-    return $.getJSON("SampleEmailData.json", function (data) {
+    return $.getJSON("../../assets/sampleEmailData.json", function (data) {
         var jsonData = data.Messages;
 
         var dataTable = $("#app-Email-table");
@@ -143,7 +143,7 @@ function setEmailRate(rate) {
 // Constructs the tasks table and calculated the total
 // billing amount for each item and for all tasks.
 function setTasksRate(rate) {
-    return $.getJSON("SampleTaskData.json", function (data) {
+    return $.getJSON("../../assets/sampleTaskData.json", function (data) {
         var jsonData = data.Tasks;
 
         var dataTable = $("#app-Tasks-table");
