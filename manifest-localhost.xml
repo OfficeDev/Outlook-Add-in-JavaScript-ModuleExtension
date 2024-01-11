@@ -23,7 +23,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/module.html"/>
+        <SourceLocation DefaultValue="https://localhost:3000/src/module/module.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -128,7 +128,7 @@
           <bt:Image id="ExecutiveIcon.80x80" DefaultValue="https://localhost:3000/assets/executive-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="Module.Url" DefaultValue="https://localhost:3000/module.html"/>
+          <bt:Url id="Module.Url" DefaultValue="https://localhost:3000/src/module/module.html"/>
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="ExtensionPoint.Label" DefaultValue="Billable Hours"/>
