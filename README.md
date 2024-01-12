@@ -86,16 +86,16 @@ Once the add-in is loaded, perform the following steps to try it out.
 
    The appearance of the modules on the navigation bar differ depending on whether you have a compacted or extended navigation bar.
 
-   ![Modules in the compact Outlook navigation bar.](readme-images/outlook-compact-navigation-bar.png)
+   ![Modules in the compact Outlook navigation bar.](readme-images/outlook-navigation-bar-icons.png)
 
-   ![Modules in the expanded Outlook navigation bar.](readme-images/outlook-navigation-bar.png)
+   ![Modules in the expanded Outlook navigation bar.](readme-images/outlook-expanded-navigation-bar.png)
 
    > **Note**: In the latest versions of Outlook on Windows, the navigation bar containing the modules appears on the left side of the client (see [New location for the Mail, Calendar, People, and other modules](https://techcommunity.microsoft.com/t5/outlook-global-customer-service/new-location-for-the-mail-calendar-people-and-other-modules/ba-p/3596278)). To access the **Billable Hours** add-in, select **More Apps** > **Billable Hours** from the navigation bar.
    >
    > ![The updated navigation bar in newer versions of Outlook on Windows.](readme-images/outlook-updated-navigation-bar.png)
 1. The user interface of the add-in is displayed with sample data for testing. To update the computed amounts, from the ribbon, select **Associate Rate**, **Partner Rate**, or **Executive Rate**.
 
-![The user interface of the module extension add-in.](readme-images/outlook-billable-hours-ui.png)
+![The user interface of the module extension add-in.](readme-images/outlook-add-in-ui.png)
 
 ## Key parts of the sample
 
